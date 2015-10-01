@@ -18,6 +18,8 @@ app.get('/', function(req, res){
 
 });
 
+app.use(express.static(__dirname + '/public'));
+
 io.on('connect', function(socket) {
   console.log('attempt to logon')
   socket.on('updateTerm', function (searchTerm) {
